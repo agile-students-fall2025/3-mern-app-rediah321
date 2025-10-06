@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import load from './loading.gif'
+import './About.css';
 
 const About = () => {
   const [data, setData] = useState(null)
