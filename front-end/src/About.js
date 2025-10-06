@@ -4,22 +4,22 @@ import load from './loading.gif'
 import './About.css';
 
 const About = () => {
-  const [data, setData] = useState(null)
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(true)
+  const [data, assignData] = useState(null)
+  const [error, assignError] = useState('')
+  const [loading, triggerLoading] = useState(true)
 
   useEffect(() => {
     axios
       .get(`http://localhost:5002/about`)
-      .then(response => {
-        setData(response.data)
+      .then(res => {
+        assignData(res.data)
       })
       .catch(err => {
         const errMsg = err?.response?.data?.status 
-        setError(errMsg)
+        assignError(errMsg)
       })
       .finally(() => {
-        setLoading(false)
+        triggerLoading(false)
       })
   }, [])
 
