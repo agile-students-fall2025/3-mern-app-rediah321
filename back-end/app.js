@@ -82,8 +82,11 @@ app.post('/messages/save', async (req, res) => {
 app.get('/about', (req, res) => {
   res.json({
     name: "Muhammad Haider Asif",
-    paragraph: "I am a Junior student on study away from the Abu Dhabi campus of New York University. During my first two years, my academic endeavours were focused on Large Language Models, and I even managed to have two of my research papers accepted at two major conferences.\n Nowadays, I am trying to learn more about automation, particularly through building agents and workflows on n8n.",
-    imageurl: "http://localhost:5002/me.jpg"
+    paragraph: ["I am a Junior student on study away from the Abu Dhabi campus of New York University. I grew up in Islamabad, Pakistan. I have three siblings.",
+      "During my first two years at NYUAD, my academic endeavours were focused on Large Language Models, and I even managed to have two of my research papers accepted at two major conferences.",
+      "\n Nowadays, I am trying to learn more about automation, particularly through building agents and workflows on n8n."
+    ],
+    imageurl: "https://github.com/agile-students-fall2025/3-mern-app-rediah321/blob/master/back-end/public/me.jpg.jpg?raw=true"
   })
 })
 

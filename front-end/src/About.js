@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-
 import load from './loading.gif'
 
 const About = () => {
@@ -15,7 +14,7 @@ const About = () => {
         setData(response.data)
       })
       .catch(err => {
-        const errMsg = err?.response?.data?.status || 'Failed to load page.'
+        const errMsg = err?.response?.data?.status 
         setError(errMsg)
       })
       .finally(() => {
