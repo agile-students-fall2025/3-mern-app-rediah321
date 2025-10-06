@@ -11,6 +11,7 @@ app.use(cors()) // allow cross-origin resource sharing
 // use express's builtin body-parser middleware to parse any data included in a request
 app.use(express.json()) // decode JSON-formatted incoming POST data
 app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming POST data
+app.use(express.static('public'))
 
 // connect to database
 mongoose
@@ -76,6 +77,14 @@ app.post('/messages/save', async (req, res) => {
       status: 'failed to save the message to the database',
     })
   }
+})
+
+app.get('/about', (req, res) => {
+  res.json({
+    name: "Muhammad Haider Asif",
+    paragraph: "I am a Junior student on study away from the Abu Dhabi campus of New York University. During my first two years, my academic endeavours were focused on Large Language Models, and I even managed to have two of my research papers accepted at two major conferences.\n Nowadays, I am trying to learn more about automation, particularly through building agents and workflows on n8n.",
+    imageurl: "http://localhost:5002/me.jpg"
+  })
 })
 
 // export the express app we created to make it available to other modules
